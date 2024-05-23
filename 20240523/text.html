@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // var - 옛날에나 쓰던거(사용하지 말 것!)
+      var x = 10;
+      console.log(x);
+      var x = 10000; // var는 이중선언 허용
+      console.log(x);
+
+      y = 1000; // 변수의 호이스팅(hoisting)
+      console.log(y);
+
+      // const -
+      const a = 1;
+      //   const a = 2; // let, const는 더 이상 이중선언을 허용하지 않음
+      // → var는 또 선언해도 오류 안뜨기때문에 복잡하게 코드짤때 문제될 수 있음
+      // → var를 쓰지 말라는 이유
+      b = 2; // 호이스팅은 무조건 var와 똑같이 취급(전역변수)
+      // → let, const는 지역변수에 해당
+      console.log(b);
+
+      function displayNumber() {
+        let z = 5;
+        console.log(z);
+        if (z >= 10) {
+          let w;
+          console.log("z는 두자리 숫자");
+        } else {
+          console.log("그런건 없다");
+        }
+      }
+
+      displayNumber();
+
+      // let, const 정리
+      // 1. 호이스팅된 변수의 선언에는 사용할 수 없음
+      // 이유는 let과 const가 블록스코프(제한된 스코프)를 가지므로 호이스팅된
+      // 최상위 스코프를 가질 수 없기 때문
+      // 2. 재선언 안됨
+      let v1 = 10;
+      // let v1 = 100; // 재선언 에러
+      let v2 = 1;
+      v2 = 2; // 재할당 가능
+      const v3 = 1;
+      v3 = 2; // 에러, 재할당 불가능
+    </script>
+  </body>
+</html>
