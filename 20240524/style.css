@@ -11,13 +11,21 @@ body {
   align-items: center;
 }
 .container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 1200px;
   height: 500px;
-  margin: 200px auto;
+  /* margin: 200px auto; */
   /* 세로는 auto 안먹음
     → 가로는 viewport만큼의 길이가 있어 유한하지만
         세로는 길이가 무한하기 때문에 */
-  display: flex;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-content: center;
   align-items: center;
 }
