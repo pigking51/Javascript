@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: 1200px;
+  height: 500px;
+  margin: 200px auto;
+  /* 세로는 auto 안먹음
+    → 가로는 viewport만큼의 길이가 있어 유한하지만
+        세로는 길이가 무한하기 때문에 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nameCard {
+  width: 250px;
+  height: 150px;
+  border-radius: 4%;
+  margin: 0 20px;
+  padding: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(220, 220, 000, 0.6) 20%,
+    rgba(192, 100, 000, 0.4) 60%,
+    rgba(192, 99, 0, 0.418) 20%
+  );
+}
+.c1 {
+  background-color: lightgreen;
+}
+.c2 {
+  background-color: teal;
+}
+.c3 {
+  background-color: lightgray;
+}
+.c4 {
+  background-color: khaki;
+}
+.heading {
+  color: dodgerblue;
+  margin-bottom: 30px;
+}
