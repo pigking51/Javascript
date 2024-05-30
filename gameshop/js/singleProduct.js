@@ -27,7 +27,7 @@ function displaySingleProduct(data) {
   const genre = document.createElement("p");
   genre.textContent = "게임 장르: " + data.genre;
   const price = document.createElement("p");
-  price.textContent = "게임 가격: " + data.price;
+  price.textContent = "게임 가격: " + data.price + "원";
   const txt = document.createElement("p");
   txt.textContent = data.text;
   game.appendChild(title);

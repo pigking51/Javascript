@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="runAdd()">Add</button>
+    <p class="result"></p>
+    <script>
+      let counter = 0;
+      // 카운터는 정상동작 하지만 전역변수를 사용하므로 의도치 않은
+      // 값의 변경 가능성 있음 ==> 카운터딜레마
+      //   function add() {
+      //     counter = counter + 1;
+      //     document.querySelector(".result").textContent = counter;
+      //   }
+
+      // 전역변수를 사용하지 않아서 외부에서 변경가능성은 없으나
+      // 카운터 기능은 불가
+      //   function add() {
+      //     let counter = 0;
+      //     counter = 1 + counter;
+      //     document.querySelector(".result").textContent = counter;
+      //     // 이거는 그냥 1만 출력됨
+      //   }
+
+      //   function add() {
+      //     let counter = 0;
+      //     counter += 1;
+      //     return counter;
+      //   }
+
+      //   function runAdd() {
+      //     document.querySelector(".result").textContent = add();
+      //   }
+
+      const add = (function () {
+        let counter = 0;
+        return function () {
+          counter += 1;
+          return counter;
+        };
+      })();
+      // 위에 맨 마지막 코드에 ()붙은이유 : 이미 한번 실행했다는 의미(내부 카운터가 그 위의 카운터를 불러오기에?????한다고 하는데 잘 모르겠음)
+      // 이렇게 안하면 일회성 코드가 되어 반복이 안됨
+      // 한번 만들어보기(뒤에 ()꼭 기억하고!!)
+      function runAdd() {
+        document.querySelector(".result").textContent = add();
+      }
+    </script>
+  </body>
+</html>
